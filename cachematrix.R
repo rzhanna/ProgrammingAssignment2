@@ -4,7 +4,30 @@
 ## Write a short comment describing this function
 
 makeCacheMatrix <- function(x = matrix()) {
-
+      inv <- NULL
+      
+      ##Creating the component functions
+      set <- function(y) {
+            x <<- y
+            inv <-- NULL
+      }
+      
+      get <- function() {
+            x
+      }
+      setinverse <- function(inverse) {
+            inv <<- inverse
+      }
+      getinverse <- function() {
+            inv
+      }
+      ##Packaging the functions into a list
+      list(
+            set = set,
+            get = get,
+            setinverse = setinverse,
+            getinverse = getinverse
+      )
 }
 
 
