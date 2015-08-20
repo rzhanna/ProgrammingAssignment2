@@ -9,7 +9,7 @@ makeCacheMatrix <- function(x = matrix()) {
       ##Creating the component functions
       set <- function(y) {
             x <<- y
-            inv <-- NULL
+            inv <<- NULL
       }
       
       get <- function() {
