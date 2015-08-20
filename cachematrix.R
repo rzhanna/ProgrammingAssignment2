@@ -3,7 +3,7 @@
 
 ## Write a short comment describing this function
 
-makeCacheMatrix <- function(x = matrix(0)) {
+makeCacheMatrix <- function(x = matrix()) {
       inv <- NULL
       
       ##Creating the component functions
