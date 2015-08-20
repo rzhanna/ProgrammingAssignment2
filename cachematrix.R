@@ -3,7 +3,7 @@
 
 ## Write a short comment describing this function
 
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(x = matrix(0)) {
       inv <- NULL
       
       ##Creating the component functions
@@ -33,6 +33,16 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Write a short comment describing this function
 
-cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+cacheSolve <- function(mcm, ...) {
+       ## Return a matrix that is the inverse of 'x'
+      inv <- mcm$getinverse()
+      if (!is.null(inv)) {
+            message("getting cached inverse data")
+            return(inv)
+      } else {
+            matrix <- mcm$get()
+            inv <- solve(matrix,...)
+            mcm$setinverse(inv)
+            inv
+      }
 }
